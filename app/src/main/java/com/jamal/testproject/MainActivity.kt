@@ -10,7 +10,10 @@ class MainActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var carOne = Car("Peugeot 408",2012, "Gray")
+        var carOne = Car("AFJPDDE349K","Peugeot 408",2012, "Gray")
+
+        carOne.driveToLocation(545343.540, 5440504.523)
+        carOne.duplicateFun()
 
         carOne.some(max = 20)
 
