@@ -12,12 +12,35 @@ fun hello2(s: String) : String?{
 
 class Car (code: String, model: String, year: Int, color: String): Vehicle(code), Transport {
 
-    private val CAR_WHEELS_NUMBER: Int = 4
+    companion object {
+        const val CAR_WHEELS_NUMBER: Int = 4
+    }
+
+    //lateinit - used for initialize a var in "not null" mode after the construction
+    lateinit var someLateInitData: String
+    fun lateInitFunCheck(){
+        //To check we do it this way
+        if(this::someLateInitData.isInitialized){
+            //Now you can use it
+        }
+    }
 
     override val numOfSeats: Int = 5
     override val baseName: String get() = "Car" + super.baseName
     override val doorsNumber: Int? get() = null
     override val wheelsNumber: Int? get() = CAR_WHEELS_NUMBER
+
+    var model = model
+
+    //Make the set private - so the value cannot be changed without changing the default imp (var)
+    var year = year
+        private set
+
+    //Custom propertie setter - backing field
+    var color = color
+        set(value) {
+            field = "Color modified: $value"
+        }
 
     var engine: Engine = Engine()
 
@@ -49,7 +72,6 @@ class Car (code: String, model: String, year: Int, color: String): Vehicle(code)
         super<Transport>.duplicateFun()
         println("My own duplicate fun!")
     }
-
 
     inner class Engine{
         fun doSomethingAwesome(){

@@ -3,11 +3,9 @@ package com.jamal.testproject.models
 /**
  * Created by Jamal on 20/03/2018.
  */
-abstract class Vehicle{
+abstract class Vehicle(code: String){
 
-    constructor(code: String){
-        println("Running Vehicle constructor")
-    }
+    val code = code
 
     open val baseName: String = "- Vehicle"
     abstract val doorsNumber: Int?
