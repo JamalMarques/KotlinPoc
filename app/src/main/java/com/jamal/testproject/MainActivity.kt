@@ -15,6 +15,8 @@ class MainActivity : Activity() {
 
         //Properties and fields
         propertiesAndFields()
+
+
     }
 
 
@@ -32,4 +34,5 @@ class MainActivity : Activity() {
         //carNotMod = Car() --> Not possible (cause its a val)
 
     }
+
 }

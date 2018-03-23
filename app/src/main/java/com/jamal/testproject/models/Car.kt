@@ -42,7 +42,7 @@ class Car (code: String, model: String, year: Int, color: String): Vehicle(code)
             field = "Color modified: $value"
         }
 
-    var engine: Engine = Engine()
+    private var engine: Engine = Engine(16)
 
     override fun heritageFun(): Int {
         println(super.heritageFun()) //calls super
@@ -73,12 +73,13 @@ class Car (code: String, model: String, year: Int, color: String): Vehicle(code)
         println("My own duplicate fun!")
     }
 
-    inner class Engine{
+    private inner class Engine(valvesNumber: Int){
+
+        var valvesNumber: Int = valvesNumber
+
         fun doSomethingAwesome(){
             super@Car.heritageFun() //call super car implementation
             heritageFun() //call car implementation
         }
     }
-
-
 }
