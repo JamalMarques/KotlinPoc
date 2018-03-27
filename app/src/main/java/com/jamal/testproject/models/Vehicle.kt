@@ -4,7 +4,6 @@ package com.jamal.testproject.models
  * Created by Jamal on 20/03/2018.
  */
 
-import com.jamal.testproject.MainActivity
 import com.jamal.testproject.masterFunction
 
 abstract class Vehicle(code: String){
